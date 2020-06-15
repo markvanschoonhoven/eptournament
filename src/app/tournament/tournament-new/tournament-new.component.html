@@ -1,0 +1,50 @@
+<div>
+        <h1>Voeg een tournooi toe</h1>
+        <div class="form-group">
+          <label for="InputTournamentname">Naam Toernooi</label>
+          <input type="text" class="form-control" #tournamentname>
+        </div>
+        <div class="form-group">
+            <label for="InputMatchduration">Duur van de wedstrijd</label>
+            <input type="number" class="form-control" #matchduration>
+        </div>
+        <div class="form-group">
+            <label for="InputIntermission">Pauze tussen de wedstrijden</label>
+            <input type="number" class="form-control" #Intermission>
+        </div>
+        <div class="form-group">
+            <label for="InputPoints_win">Aantal punten bij winst</label>
+            <input type="number" class="form-control" #points_win>
+        </div>
+        <div class="form-group">
+            <label for="InputPoints_draw">Aantal punten bij een gelijkspel</label>
+            <input type="number" class="form-control" #points_draw>
+        </div>                  
+        
+        <div class="form-group">
+            <label for="InputRef">Referees</label>
+                  <select name="referees" #refid>
+                <option *ngFor="let Referees of Referees$ | async" [value]='Referees.id'>
+                  {{Referees.name}}</option>
+              </select>
+        </div>
+
+        <div class="form-group">
+            <label for="InputDivision">Divisions</label>
+                  <select name="divisions" #devid>
+                <option *ngFor="let Divisions of Divisions$ | async" [value]='Divisions.id'>
+                  {{Divisions.division}}</option>
+              </select>
+        </div>        
+
+
+        <button  (click)='addTournament(
+            tournamentname.value,
+            matchduration.value,
+            Intermission.value,
+            points_win.value,
+            points_draw.value,
+            refid.value,
+            devid.value
+        )' class="btn btn-primary">Voeg een toernooi toe</button>
+</div>

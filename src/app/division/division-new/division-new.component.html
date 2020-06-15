@@ -1,0 +1,12 @@
+<div>
+    <h1>Voeg een divisie toe</h1>
+    <div class="form-group">
+      <label for="InputDivisionname">Naam Divisie</label>
+      <input type="text" class="form-control" #divisioname>
+    </div>
+
+    
+    <button  (click)='addDivision(
+        divisioname.value
+    )' class="btn btn-primary">Voeg een divisie toe</button>
+</div>

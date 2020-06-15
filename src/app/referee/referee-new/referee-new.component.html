@@ -1,0 +1,11 @@
+<div>
+    <h1>Voeg een scheidsrechter toe</h1>
+    <div class="form-group">
+      <label for="InputTournamentname">Naam Scheidsrechter</label>
+      <input type="text" class="form-control" #refereeame>
+    </div>
+                      
+    <button  (click)='addReferee(
+        refereeame.value
+    )' class="btn btn-primary">Voeg de scheidsrechter toe</button>
+</div>

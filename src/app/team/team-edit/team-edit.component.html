@@ -1,0 +1,19 @@
+<div>
+    <h1>Wijzig een team</h1>
+    
+        <input class="form-control" type="hidden" #idvar value="{{team.id}}">
+    <div class="form-group">
+      <label for="InputTournamentname">Naam Team</label>
+      <input type="text" class="form-control" #teamname value="{{team.name}}">
+    </div>
+    <div class="form-group">
+        <label for="InputMatchduration">Team logo</label>
+        <input type="text" class="form-control" #teamlogo value="{{team.logo}}">
+    </div>
+                         
+    <button  (click)='editTeam(
+        idvar.value,
+        teamname.value,
+        teamlogo.value
+    )' class="btn btn-primary">Bewaar</button>
+</div>

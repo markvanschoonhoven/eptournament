@@ -1,0 +1,17 @@
+<div>
+    <h1>Voeg een team toe</h1>
+    <div class="form-group">
+      <label for="InputTournamentname">Naam Team</label>
+      <input type="text" class="form-control" #teamname>
+    </div>
+    <div class="form-group">
+        <label for="InputMatchduration">Team logo</label>
+        <input type="text" class="form-control" #teamlogo>
+    </div>
+                         
+    <button  (click)='addTeam(
+        teamname.value,
+        teamlogo.value
+    )' class="btn btn-primary">Voeg een team toe</button>
+</div>
+

@@ -1,0 +1,30 @@
+<div>
+    <h1>Voeg een speler toe</h1>
+    <div class="form-group">
+      <label for="InputPlayername">Naam Speler</label>
+      <input type="text" class="form-control" #playername>
+    </div>
+    <div class="form-group">
+        <label for="InputAge">Leeftijd</label>
+        <input type="number" class="form-control" #playerage>
+    </div>
+    <div class="form-group">
+        <label for="InputPhoto">Upload een foto</label>
+        <input type="text" class="form-control" #playerphoto>
+    </div>
+                
+    <div class="form-group">
+        <label for="InputTeam">Teams</label>
+              <select name="teams" #teamid>
+            <option *ngFor="let Teams of Teams$ | async" [value]='Teams.id'>
+              {{Teams.name}}</option>
+          </select>
+        </div>
+      
+    <button  (click)='addPlayer(
+        playername.value,
+        playerage.value,
+        playerphoto.value,
+        teamid.value
+    )' class="btn btn-primary">Voeg een speler toe</button>
+</div>
